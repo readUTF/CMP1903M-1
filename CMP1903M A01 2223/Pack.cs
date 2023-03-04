@@ -9,7 +9,7 @@ namespace CMP1903M_A01_2223
     class Pack
     {
 
-        private static List<Card> pack;
+        public static List<Card> pack;
 
         public Pack()
         {
@@ -49,6 +49,8 @@ namespace CMP1903M_A01_2223
 
                     pack = clone;
                     return true;
+                case 3:
+                    return true;
             }
 
             return false;
@@ -61,7 +63,7 @@ namespace CMP1903M_A01_2223
             return card;
         }
 
-        public static List<Card> dealCard(int amount)
+        public static List<Card> dealCards(int amount)
         {
             List<Card> cards = new List<Card>();
             for (int x = 0; x < amount; x++)

@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37494352-d93e-4b64-b497-11dd8e95b15e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/CMP1903M A01 2223.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/CMP1903M A01 2223.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CMP1903M A01 2223/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CMP1903M A01 2223/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Card.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Pack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Pack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Testing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/obj/Debug/CMP1903M A01 2223.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/obj/Debug/CMP1903M A01 2223.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Testing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Testing.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/e7/0c73254b/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677953188175</updated>
-      <workItem from="1677953190008" duration="1596000" />
+      <workItem from="1677953190008" duration="1929000" />
     </task>
     <servers />
   </component>

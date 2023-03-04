@@ -21,7 +21,12 @@ namespace CMP1903M_A01_2223
         {
             return (Suit - 1) * 13 + Value;
         }
-        
+
+        public override string ToString()
+        {
+            return "[Suit: " + Suit + ", Value: " + Value + "]";
+        }
+
         public void printCard()
         {
             Console.WriteLine("Value: " + Value + " Suit: " + Suit);
