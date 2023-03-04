@@ -8,26 +8,68 @@ namespace CMP1903M_A01_2223
 {
     class Pack
     {
-        List<Card> pack;
+
+        private static List<Card> pack;
 
         public Pack()
         {
-            //Initialise the card pack here
+            pack = new List<Card>();
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 13; j++)
+                {
+                    pack.Add(new Card(i+1, j+1));
+                }
+            }
         }
 
         public static bool shuffleCardPack(int typeOfShuffle)
         {
-            //Shuffles the pack based on the type of shuffle
+            switch (typeOfShuffle)
+            {
+                case 1:
+                    for (var i = pack.Count-1; i >= 0; i--)
+                    {
+                        Random random = new Random();
+                        var rand1 = random.Next(i);
+                        var rand2 = random.Next(i);
+                        (pack[rand1], pack[rand2]) = (pack[rand2], pack[rand1]);
+                    }
+                    return true;
+                case 2:
+                    List<Card> clone = new List<Card>();
+                    var halfCount = pack.Count / 2;
+                    for (var i = 0; i < halfCount; i++)
+                    {
+                        var card1 = pack[i];
+                        var card2 = pack[halfCount+i];
+                        clone.Add(card1);
+                        clone.Add(card2);
+                    }
 
+                    pack = clone;
+                    return true;
+            }
+
+            return false;
         }
+
         public static Card deal()
         {
-            //Deals one card
-
+            var card = pack[0];
+            pack.Remove(card);
+            return card;
         }
+
         public static List<Card> dealCard(int amount)
         {
-            //Deals the number of cards specified by 'amount'
+            List<Card> cards = new List<Card>();
+            for (int x = 0; x < amount; x++)
+            {
+                cards.Add(deal());
+            }
+
+            return cards;
         }
     }
 }

@@ -8,11 +8,24 @@ namespace CMP1903M_A01_2223
 {
     class Card
     {
-        //Base for the Card class.
-        //Value: numbers 1 - 13
-        //Suit: numbers 1 - 4
-        //The 'set' methods for these properties could have some validation
-        public int Value { get; set; }
-        public int Suit { get; set; }
+        public int Value { get; set; } // 1 - 13
+        public int Suit; // 1 - 4
+
+        public Card(int suit, int value)
+        {
+            Suit = suit;
+            Value = value;
+        }
+
+        public int getId()
+        {
+            return (Suit - 1) * 13 + Value;
+        }
+        
+        public void printCard()
+        {
+            Console.WriteLine("Value: " + Value + " Suit: " + Suit);
+        }
+
     }
 }
