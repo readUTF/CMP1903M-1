@@ -7,16 +7,36 @@ namespace CMP1903M_A01_2223
     {
         static void Main(string[] args)
         {
-            var pack = new Pack();
-            Pack.shuffleCardPack(1);
-            Console.WriteLine("Shuffle 1: " + String.Join(", ", Pack.pack.Select(card => card.ToString())));
-            Pack.shuffleCardPack(2);
-            Console.WriteLine("Shuffle 2: " + String.Join(", ", Pack.pack.Select(card => card.ToString())));
-            Pack.shuffleCardPack(3);
-            Console.WriteLine("Shuffle 3: " + String.Join(", ", Pack.pack.Select(card => card.ToString())));
 
-            Console.WriteLine("Pack.deal() : " + Pack.deal());
-            Console.WriteLine("Pack.dealCards(7) : " + String.Join(", ", Pack.dealCards(7).Select(card => card.ToString())));
+            var pack = new Pack();
+            
+            Action dealCards = () =>  Pack.dealCards(53);
+            new Pack();
+            Action dealCardsMin = () => Pack.dealCards(0);
+            new Pack();
+            Action invalidShuffle = () => Pack.shuffleCardPack(5);
+            new Pack();
+            Pack.dealCards(52);
+            Action noCardsLeft = () => Pack.deal();
+            
+            testMethod(dealCards, "Did not throw error on invalid deal", "Success, Cannot deal more cards than in the pack");
+            testMethod(dealCardsMin, "Did not throw error on invalid deal", "Success, Cannot deal less than 1 card");
+            testMethod(invalidShuffle, "Did not throw error on invalid shuffle", "Success, Cannot shuffle with invalid shuffle type");
+            testMethod(noCardsLeft, "Did not throw error on invalid shuffle", "Success, No cards left in pack");
         }
+
+        public static void testMethod(Action action, String success, String error)
+        {
+            try
+            {
+                action();
+                Console.WriteLine(success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(error);
+            }
+        }
+        
     }
 }
