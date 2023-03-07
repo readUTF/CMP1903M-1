@@ -34,6 +34,7 @@ namespace CMP1903M_A01_2223
             }
             catch (Exception e)
             {
+                Console.Out.WriteLine("Error: " + e.Message);
                 Console.WriteLine(error);
             }
         }
