@@ -19,18 +19,21 @@ namespace CMP1903M_A01_2223
             {
                 throw new Exception("Suit must be between 1 and 4");
             }
-            if (value > 12 || value < 1)
+
+            if (value > 13 || value < 1)
             {
-                throw new Exception("Value must be between 1 and 12");
+                throw new Exception("Value must be between 1 and 13");
             }
+
             Suit = suit;
             Value = value;
         }
 
         public override string ToString()
         {
-            return "[Suit: " + Suit + ", Value: " + Value + "]";
+            string[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
+            string[] values = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+            return values[Value - 1] + " of " + suits[Suit - 1];
         }
-
     }
 }

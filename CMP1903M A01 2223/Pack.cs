@@ -42,11 +42,13 @@ namespace CMP1903M_A01_2223
             switch (typeOfShuffle)
             {
                 case 1:
+                    
+                    Random random = new Random();
                     for (var i = pack.Count - 1; i >= 0; i--)
                     {
-                        Random random = new Random();
                         var rand1 = random.Next(i);
                         var rand2 = random.Next(i);
+                        Console.WriteLine("Swapping " + rand1 + " and " + rand2);
                         (pack[rand1], pack[rand2]) = (pack[rand2], pack[rand1]);
                     }
 

@@ -22,6 +22,9 @@ namespace CMP1903M_A01_2223
 
         private void TestShuffle()
         {
+            var pack = new Pack();
+            pack.ShuffleCardPack(1);
+            Console.WriteLine(String.Join(", ", pack.pack.Select(card => card.ToString())));
         }
 
         private void TestInputExceptions()
@@ -44,6 +47,8 @@ namespace CMP1903M_A01_2223
                 "Success, Cannot shuffle with invalid shuffle type");
             testMethod(NoCardsLeft, "Failure, Did not throw error on invalid shuffle",
                 "Success, No cards left in pack");
+            
+            
         }
 
 
@@ -56,7 +61,6 @@ namespace CMP1903M_A01_2223
             }
             catch (Exception e)
             {
-                Console.Out.WriteLine("Error: " + e.Message);
                 Console.WriteLine(error);
             }
         }

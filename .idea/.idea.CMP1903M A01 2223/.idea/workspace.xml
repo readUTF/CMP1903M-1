@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37494352-d93e-4b64-b497-11dd8e95b15e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CMP1903M A01 2223/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMP1903M A01 2223/ShuffleApp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CMP1903M A01 2223/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CMP1903M A01 2223/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/CMP1903M A01 2223.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/CMP1903M A01 2223.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Pack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Pack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMP1903M A01 2223/Testing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CMP1903M A01 2223/Testing.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +18,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/82/07338d6e/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/90/f8d06da5/Console.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/e7/0c73254b/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -78,6 +81,7 @@
       <workItem from="1678283608567" duration="1646000" />
       <workItem from="1678296972795" duration="1167000" />
       <workItem from="1678322562851" duration="1417000" />
+      <workItem from="1678365266538" duration="2311000" />
     </task>
     <servers />
   </component>
