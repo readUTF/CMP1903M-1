@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
     class Pack
     {
+        /// <summary>
+        /// The current pack of cards
+        /// </summary>
+        public List<Card> pack { get; private set; }
 
-        /**
-         * The single instance of the card pack
-         */
-        public static List<Card> pack { get; private set; }
-
-        /**
-         * Constructor for the card pack, generates the 52 cards
-         */
+        /// <summary>
+        /// Generates the current pack and inputs all 52 cards
+        /// </summary>
         public Pack()
         {
             pack = new List<Card>();
@@ -24,26 +20,29 @@ namespace CMP1903M_A01_2223
             {
                 for (int j = 0; j < 13; j++)
                 {
-                    pack.Add(new Card(i+1, j+1));
+                    pack.Add(new Card(i + 1, j + 1));
                 }
             }
         }
 
-        
-        /**
-         * Used to shuffle the single instance of the card pack
-         * typeOfShuffle references the type of shuffle to be used
-         * 
-         * 1 - Fisher-Yates Shuffle
-         * 2 - Riffle Shuffle
-         * 3 - No Shuffle
-         */
-        public static void shuffleCardPack(int typeOfShuffle)
+        /// <summary>
+        /// Used to shuffle the single instance of the card pack
+        /// typeOfShuffle references the type of shuffle to be used
+        /// 
+        /// 1 - Fisher-Yates Shuffle
+        /// 2 - Riffle Shuffle
+        /// 3 - No Shuffle
+        ///
+        /// The global pack is permuted by the shuffle
+        /// </summary>
+        /// <param name="typeOfShuffle"></param>
+        /// <exception cref="Exception"></exception>
+        public void ShuffleCardPack(int typeOfShuffle)
         {
             switch (typeOfShuffle)
             {
                 case 1:
-                    for (var i = pack.Count-1; i >= 0; i--)
+                    for (var i = pack.Count - 1; i >= 0; i--)
                     {
                         Random random = new Random();
                         var rand1 = random.Next(i);
@@ -58,7 +57,7 @@ namespace CMP1903M_A01_2223
                     for (var i = 0; i < halfCount; i++)
                     {
                         var card1 = pack[i];
-                        var card2 = pack[halfCount+i];
+                        var card2 = pack[halfCount + i];
                         clone.Add(card1);
                         clone.Add(card2);
                     }
@@ -69,35 +68,39 @@ namespace CMP1903M_A01_2223
                     return;
                 default:
                     throw new Exception("Invalid shuffle type");
-            } 
+            }
         }
 
-        /**
-         * Deals a single card from the pack
-         */
-        public static Card deal()
+        /// <summary>
+        /// Deals a single card from the pack
+        /// </summary>
+        /// <returns>The top card on the pack</returns>
+        /// <exception cref="Exception">Thrown if no cards are left in the pack when drawing</exception>
+        public Card Deal()
         {
-            if(pack.Count == 0)
-                throw new Exception("No cards left in the pack");
+            if (pack.Count == 0) throw new Exception("No cards left in the pack");
             var card = pack[0];
             pack.Remove(card);
             return card;
         }
 
-        /**
-         * Deals a specified amount of cards from the pack
-         * amount cannot be negative nor greater than the current size of the pack
-         */
-        public static List<Card> dealCards(int amount)
+        /// <summary>
+        /// Deals a specified amount of cards from the pack
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <returns>Specified amount of cards from the top</returns>
+        /// <exception cref="Exception">Thrown if less than 1 card is drawn or there are not enough cards in the pack</exception>
+        public List<Card> DealCards(int amount)
         {
             if (amount <= 0 || amount > pack.Count)
             {
                 throw new Exception("Invalid amount of cards to deal");
             }
+
             List<Card> cards = new List<Card>();
             for (int x = 0; x < amount; x++)
             {
-                cards.Add(deal());
+                cards.Add(Deal());
             }
 
             return cards;

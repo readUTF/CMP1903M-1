@@ -3,27 +3,49 @@ using System.Linq;
 
 namespace CMP1903M_A01_2223
 {
-    class Program
+    class Testing
     {
-        static void Main(string[] args)
+        public Testing()
         {
-
-            var pack = new Pack();
-            
-            Action dealCards = () =>  Pack.dealCards(53);
-            new Pack();
-            Action dealCardsMin = () => Pack.dealCards(0);
-            new Pack();
-            Action invalidShuffle = () => Pack.shuffleCardPack(5);
-            new Pack();
-            Pack.dealCards(52);
-            Action noCardsLeft = () => Pack.deal();
-            
-            testMethod(dealCards, "Did not throw error on invalid deal", "Success, Cannot deal more cards than in the pack");
-            testMethod(dealCardsMin, "Did not throw error on invalid deal", "Success, Cannot deal less than 1 card");
-            testMethod(invalidShuffle, "Did not throw error on invalid shuffle", "Success, Cannot shuffle with invalid shuffle type");
-            testMethod(noCardsLeft, "Did not throw error on invalid shuffle", "Success, No cards left in pack");
+            TestInputExceptions();
+            TestShuffle();
+            TestDeal();
         }
+
+        private void TestDeal()
+        {
+            Pack pack = new Pack();
+            Console.WriteLine(String.Join(", ", pack.pack.Select(card => card.ToString())));
+            pack.ShuffleCardPack(1);
+            Console.WriteLine(String.Join(", ", pack.pack.Select(card => card.ToString())));
+        }
+
+        private void TestShuffle()
+        {
+        }
+
+        private void TestInputExceptions()
+        {
+            Pack pack = new Pack();
+            void DealCards() => pack.DealCards(53);
+            pack = new Pack();
+            void DealCardsMin() => pack.DealCards(0);
+            pack = new Pack();
+            void InvalidShuffle() => pack.ShuffleCardPack(5);
+            pack = new Pack();
+            pack.DealCards(52);
+            void NoCardsLeft() => pack.Deal();
+
+            testMethod(DealCards, "Failure, Did not throw error on invalid deal",
+                "Success, Cannot deal more cards than in the pack");
+            testMethod(DealCardsMin, "Failure, Did not throw error on invalid deal",
+                "Success, Cannot deal less than 1 card");
+            testMethod(InvalidShuffle, "Failure, Did not throw error on invalid shuffle",
+                "Success, Cannot shuffle with invalid shuffle type");
+            testMethod(NoCardsLeft, "Failure, Did not throw error on invalid shuffle",
+                "Success, No cards left in pack");
+        }
+
 
         public static void testMethod(Action action, String success, String error)
         {
@@ -38,6 +60,5 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine(error);
             }
         }
-        
     }
 }
